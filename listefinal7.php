@@ -13,13 +13,37 @@ include('conn.php');
 $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
 
 echo "<h1><span>Voici la liste de tous les élèves :</span></h1>";
-echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :</p>"
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
+?>
+<?php
+include('conn.php');
 $query=mysqli_query($conn,"select count(el_id) as total from `t_eleve`");
 $row=mysqli_fetch_array($query);
 ?>
 <?php echo $row['total']; 
-echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :</p>
-      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :</p><br>";
+?>
+<?php
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :&nbsp"
+?>
+<?php
+include('conn.php');
+$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'H'");
+$row=mysqli_fetch_array($query);
+?>
+<?php echo $row['total']; 
+?>
+<?php
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :&nbsp"
+?>
+<?php
+include('conn.php');
+$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'F'");
+$row=mysqli_fetch_array($query);
+?>
+<?php echo $row['total']; 
+?>
+<br></br>
+<?php
 
 $requete1 = mysqli_query($conn,"select count(el_id) from t_eleve as total");
 
@@ -29,8 +53,12 @@ while ($row = $requete1->fetch_assoc()) {
     echo $row['classtype']."<br>";
 }
 
-echo "<table>
-  <tr>
+require_once("conn.php");
+$affiche = "select * form t_eleve";
+$res = mysqli_query($affiche) or die(mysqli_error());
+?>
+<form>
+    <tr>
     <th>Numero</th>
     <th>Nom</th>
     <th>Prenom</th>
@@ -41,15 +69,10 @@ echo "<table>
     <th>Diplome</th>
     <th>Option</th>
     <th>Modification</th>
-  </tr>";
-
-$bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
-$requete="select * from t_eleve";
-		$resultats=$bdd->query($requete);
-        $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
-        while($ligne) {
-            echo "<tr><td>".$ligne->el_id."<td>".$ligne->el_nom."<td>".$ligne->el_prenom."<td>".$ligne->el_ddn."<td>".$ligne->el_email."<td>".$ligne->el_sexe."<td>".$ligne->el_inscription."<td>".$ligne->el_diplome."<td>".$ligne->el_option."</td></tr>";
-            $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
-                    }
+    </tr>";
+    <?php while ($ET = mysqli_fetch_assoc($res)) {?>
+    <tr>
+        <td><?php echo ($ET['el_id']); ?></td>
+    </tr>
+</form>
 ?>
-<link rel="stylesheet" type="text/css" href="style.css">

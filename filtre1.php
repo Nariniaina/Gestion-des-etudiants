@@ -11,9 +11,37 @@ echo "<ul>
 
 echo "<h1><span>Voici la liste de tous les élèves en RSI : </span></h1>";
 
-echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :</p>
-      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :</p>
-      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :</p><br>";
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
+?>
+<?php
+include('conn.php');
+$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_option = 'RSI'");
+$row=mysqli_fetch_array($query);
+?>
+<?php echo $row['total']; 
+?>
+<?php
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :&nbsp"
+?>
+<?php
+include('conn.php');
+$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'H' && el_option = 'RSI'");
+$row=mysqli_fetch_array($query);
+?>
+<?php echo $row['total']; 
+?>
+<?php
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :&nbsp"
+?>
+<?php
+include('conn.php');
+$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'F' && el_option = 'RSI'");
+$row=mysqli_fetch_array($query);
+?>
+<?php echo $row['total']; 
+?>
+<br></br>
+<?php
 
 echo "<table>
   <tr>
@@ -54,9 +82,37 @@ echo "<table>
 
 echo "<h1><span>Voici la liste de tous les élèves en DEV : </span></h1>";
 
-echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :</p>
-      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :</p>
-      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :</p><br>";
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
+?>
+<?php
+include('conn.php');
+$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_option = 'DEV'");
+$row=mysqli_fetch_array($query);
+?>
+<?php echo $row['total']; 
+?>
+<?php
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :&nbsp"
+?>
+<?php
+include('conn.php');
+$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'H' && el_option = 'DEV'");
+$row=mysqli_fetch_array($query);
+?>
+<?php echo $row['total']; 
+?>
+<?php
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :&nbsp"
+?>
+<?php
+include('conn.php');
+$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'F'  && el_option = 'DEV'");
+$row=mysqli_fetch_array($query);
+?>
+<?php echo $row['total']; 
+?>
+<br></br>
+<?php
 
 $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
 

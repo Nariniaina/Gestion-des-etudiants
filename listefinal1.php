@@ -9,16 +9,27 @@ echo "<ul>
         <li><a href='listefinal.php'> Listes des élèves </a></li>
     </ul>";
 
+include('conn.php');
+$bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
+
 echo "<h1><span>Voici la liste de tous les élèves :</span></h1>";
-echo "<span class='nombre'><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :</p>
+echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :</p>
       <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :</p>
-      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :</p></span>";
+      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :</p><br>";
+
+$requete1 = mysqli_query($conn,"select count(el_id) from t_eleve as total");
+
+$row = mysqli_fetch_array($requete1);
+
+while ($row = $requete1->fetch_assoc()) {
+    echo $row['classtype']."<br>";
+}
 
 echo "<table>
   <tr>
     <th>Numero</th>
     <th>Nom</th>
-    <th>Prénom</th>
+    <th>Prenom</th>
     <th>Date de naissance</th>
     <th>Adresse mail</th>
     <th>Sexe</th>
@@ -37,5 +48,4 @@ $requete="select * from t_eleve";
             $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
                     }
 ?>
-
 <link rel="stylesheet" type="text/css" href="style.css">

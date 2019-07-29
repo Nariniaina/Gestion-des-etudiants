@@ -67,13 +67,23 @@ echo "<table>
     <th>Modification</th>
   </tr>";
 
-$bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
-$requete="select * from t_eleve";
-		$resultats=$bdd->query($requete);
-        $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
-        while($ligne) {
-            echo "<tr><td>".$ligne->el_id."<td>".$ligne->el_nom."<td>".$ligne->el_prenom."<td>".$ligne->el_ddn."<td>".$ligne->el_email."<td>".$ligne->el_sexe."<td>".$ligne->el_inscription."<td>".$ligne->el_diplome."<td>".$ligne->el_option."</td></tr>";
-            $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
-                    }
+include('conn.php');
+        ?>
+        
+                    <?php
+                            $query=mysqli_query($conn,"select lo_nom,lo_prenom from `t_eleve`'");
+                        while($row=mysqli_fetch_array($query)){
+                            ?>
+                                <tr>
+                                    <td><?php echo $row['lo_nom']; ?></td>
+                                    <td><?php echo $row['lo_prenom']; ?></td>
+                                    <td><button id="edit" value="<?php echo $row['lo_id']; ?>">Edit
+                                        </button>
+                                    </td>
+                                </tr>
+                            <?php
+                        }
+                    ?>
+        <?php
 ?>
 <link rel="stylesheet" type="text/css" href="style.css">
