@@ -4,11 +4,11 @@
 		# chiffrage
 		$password = md5($password);
 		include('conn.php');
-		$req= $bdd->prepare('INSERT INTO t_login(lo_username, lo_password, lo_email, lo_date) VALUES(:username, :password, :email2, :date1)');
+		$req= $bdd->prepare('INSERT INTO t_login(lo_username, lo_password, lo_email, lo_date) VALUES(:username, :password, :email, :date1)');
 		$req->execute (array(
 		    'username' => htmlspecialchars($_POST['username']),
 		    'password' => htmlspecialchars($_POST['password']),
-		    'email2' => htmlspecialchars($_POST['email3']),
+		    'email' => htmlspecialchars($_POST['email']),
 		    'date1' => date("Y-m-d H:i:s"),
 		));
 	} else echo "les 2 passwords ne sont pas identiques";

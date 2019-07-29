@@ -1,7 +1,23 @@
 <?php
     session_start();
+try
+{
+ $bdd = new PDO('mysql:host=localhost;dbname=gestion_etudiant', 'root', '');
+}
+catch(Exception $e)
+{
+        die('Erreur : '.$e->getMessage());
+}
+$req= $bdd->prepare('INSERT INTO eleve(el_nom, el_prenom, el_ddn, el_adressemail, el_diplome, el_opt) VALUES(:nom, :prenom, :dates, :email, :diplome, :options)');
+$req->execute (array(
+    'nom' => htmlspecialchars($_POST['nom']),
+    'prenom' => htmlspecialchars($_POST['prenom']),
+    'dates' => htmlspecialchars($_POST['dates']),
+    'email' => htmlspecialchars($_POST['email']),
+    'diplome' => htmlspecialchars($_POST['diplome']),
+    'options' => htmlspecialchars($_POST['options']),
+));
 ?>
-<!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
@@ -21,12 +37,12 @@
     <div id="particle-canvas">
         <span  style="float: right">
         <h1 style="color: white">Login</h1>
-		<label style="color: white">Username:</label> <input type="text" value="<?php if (isset($_COOKIE["user"])){echo $_COOKIE["user"];}?>" name="username"><br><br>
-		<label style="color: white">Password:</label> <input type="password" value="<?php if (isset($_COOKIE["pass"])){echo $_COOKIE["pass"];}?>" name="password"><br><br>
-		<input type="checkbox" name="remember"> <span style="color: white">Remember me</span><br><br>
-		<input type="submit" value="S'inscrire" name="login">
-		<br></br>
-		<span>
+        <label style="color: white">Username:</label> <input type="text" value="<?php if (isset($_COOKIE["user"])){echo $_COOKIE["user"];}?>" name="username"><br><br>
+        <label style="color: white">Password:</label> <input type="password" value="<?php if (isset($_COOKIE["pass"])){echo $_COOKIE["pass"];}?>" name="password"><br><br>
+        <input type="checkbox" name="remember"> <span style="color: white">Remember me</span><br><br>
+        <input type="submit" value="S'inscrire" name="login">
+        <br></br>
+        <span>
             <?php
             if (isset($_SESSION['message'])){
               echo $_SESSION['message'];

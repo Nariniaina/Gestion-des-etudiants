@@ -36,7 +36,7 @@
         </span> 
     </div>
    </form>
-   <form method="post" action="traitement.php">
+   <form method="post" action="traitement1.php">
         <p><label style="color: white">NOM :</label>  
         <p><input type="text" name="nom" required></p>
         <p> <label style="color: white">PRENOM</label> : 
