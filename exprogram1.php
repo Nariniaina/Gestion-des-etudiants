@@ -174,7 +174,7 @@
             <?php } ?>
                 </table>
             <?php echo "<br></br>"; ?>
-            <form method="post" action="traitement12.php">
+            <form method="post" action="test3.php">
             <p style="text-align: center;  width: 100%;"><span><input type="submit" value="CONFIRMER"></span></p>
             </form>
     </form>

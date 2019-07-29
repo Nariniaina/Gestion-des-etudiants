@@ -93,6 +93,7 @@ while ($row = $requete1->fetch_assoc()) {
         </tr>
         <?php } ?>
     </table>
+    <?php echo "<br></br>"; ?>
  </body>
  </html>
 
