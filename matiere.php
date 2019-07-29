@@ -10,8 +10,15 @@
 <body>
     <span>
         <ul style="background-color: MediumSeaGreen; list-style-type: none; overflow: hidden;">
-            <li style="float: left; font-size: 22px;"><a href='accueil.php'> ⃝&nbsp&nbsp&nbsp</a></li>
-            <li style="float: left; font-size: 25px;"><a href='gestion.php'> Application</a></li>
+            <li style="float: left; font-size: 17px"><a href='accueil.php'>←</a></li>
+            <li style="float: left; font-size: 17px; "><a href='gestion.php'>⌂</a></li>
+            <li style="float: left;"><a href='retardlist.php'> ① Retard</a></li>
+            <li style="float: left;"><a href='absencelist.php'> ② Absence</a></li>
+            <li style="float: left;"><a href='classelist.php'> ③ Classe</a></li>
+            <li style="float: left;"><a href='matierelist.php'> ④ Matiere</a></li>
+            <li style="float: left;"><a href='sallelist.php'> ⑤ Salle</a></li>
+            <li style="float: left;"><a href='tempslist.php'> ⑥ Emploie du temps</a></li>
+            <li style="float: left;"><a href='examenlist.php'> ⑦ Examen</a></li>
         </ul>
     </span>
 </body>

@@ -21,3 +21,5 @@
         mysqli_query($connect,$req2);
     }
 ?>
+<?php 
+header('location:exprogram.php');?>
