@@ -1,5 +1,5 @@
 <?php
-session_start();
+include("auth.php");
 include('conn.php');
 echo "<ul>
         <li><a href='accueil.php'> Acceuil</a></li>

@@ -1,4 +1,5 @@
 <?php
+include("auth.php");
 
 echo "<ul>
         <li><a href='accueil.php'> Accueil</a></li>

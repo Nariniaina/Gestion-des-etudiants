@@ -1,9 +1,8 @@
 <?php
-	if(isset($_POST['login'])){
-		
+	if(isset($_POST['login'])){	
+		require('db.php');
 		session_start();
 		include('conn.php');
-	
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 		$password=md5($password);
@@ -21,9 +20,8 @@
 				setcookie("user", $row['username'], time() + (86400 * 30)); 
 				setcookie("pass", $row['password'], time() + (86400 * 30)); 
 			}
-			
-			$_SESSION['id']=$row['userid'];
-			header('location:accueil.php');
+			$_SESSION['username'] = $username;
+	    	header("Location: accueil.php");
 		}
 	}
 	else{
