@@ -1,9 +1,8 @@
 <?php
     include("auth.php");
-	session_start();
 	include('conn.php');
 	{$id=$_POST['numero2'];
-	mysqli_query($conn,"delete from `eleve` where el_id='$id'");
+	mysqli_query($conn,"delete from `t_eleve` where el_id='$id'");
 	}
 ?>
 <ul>

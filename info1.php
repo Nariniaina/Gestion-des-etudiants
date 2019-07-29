@@ -10,31 +10,35 @@
     <li><a href='listefinal.php'> Listes des élèves </a></li>
 </ul>
 <link rel="stylesheet" type="text/css" href="style.css">
-<form method="post" action="update.php">
+<form method="post" action="update1.php">
     <div>
         <p><label>Son Numero</label> : 
         <p><input type="text" name="numero" required></p>
         <h1><span>Changer les données d'un élèves : </span></h1>
-        <p><label>NOM</label> : 
-        <p><input type="text" name="nom"></p>
-        <p> <label>PRENOM</label> : 
-        <p><input type="text" name="prenom"></p>
-        <p><label>DATE DE NAISSANCE</label> : 
-        <p><input type="date" name='dates'></p>
-        <p><label>ADDRESSE EMAIL</label> :  
-        <p><input type="email" name="email"></p>
-        <p><label>DIPLOME </label> : </p>
-        <select name="diplome">
+        <p><label style="color: black">NOM :</label>
+        <p><input type="text" name="nom" required></p>
+        <p> <label style="color: black">PRENOM :</label>  
+        <p><input type="text" name="prenom" required></p>
+        <p><label style="color: black">DATE DE NAISSANCE :</label>
+        <p><input type="date" name='dates' required></p>
+        <p><label style="color: black">SEXE :</label>   </p>
+        <select name="sexe" required>
+            <option value="H">Homme</option>
+            <option value="F">Femme</option>
+        </select></p>
+        <p><label style="color: black">ADDRESSE EMAIL :</label>   
+        <p><input type="email" name="email" required></p>
+        <p><label style="color: black">DIPLOME :</label>  </p>
+        <select name="diplome" required>
             <option value="A2">Serie A2</option>
             <option value="D">D</option>
-        <option value="C">C</option>   
+            <option value="C">C</option>   
         </select></p>
-        <p><label>FILIAIRE</label> : </p>
-        <select name="options">
+        <p><label style="color: black">OPTION :</label>  </p>
+        <select name="options" required>
             <option value="DEV">intégration et développement</option>
             <option value="RSI">réseaux et systèmes </option>
-        </select>
-        </p>
+        </select></p>
         <p><input type="submit" value="envoyer mes informations"></p>
     </div>
 </form>
