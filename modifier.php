@@ -11,5 +11,5 @@
 
 	$req = "update t_eleve set el_nom = '$nom', el_prenom = '$prenom', el_ddn = '$dates', el_sexe = '$sexe', el_email ='$email', el_diplome = '$dip', el_option = '$option' where el_id=$id";
 	mysqli_query($conn,$req) or die(mysqli_error());	
-	header("location: afficheall.php");
+	header("location: listefinal.php");
 ?>

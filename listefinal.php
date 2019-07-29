@@ -5,7 +5,6 @@ echo "<ul>
         <li><a href='accueil.php'> Accueil</a></li>
         <li><a href='register.php'> S'inscrire</a></li>
         <li><a href='filtre.php'> Filtrage des élèves </a></li>
-        <li><a href='info.php'> Information sur un élèves </a></li>
         <li><a href='listefinal.php'> Listes des élèves </a></li>
     </ul>";
 
@@ -52,28 +51,44 @@ $row = mysqli_fetch_array($requete1);
 while ($row = $requete1->fetch_assoc()) {
     echo $row['classtype']."<br>";
 }
-
-echo "<table>
-  <tr>
-    <th>Numero</th>
-    <th>Nom</th>
-    <th>Prenom</th>
-    <th>Date de naissance</th>
-    <th>Adresse mail</th>
-    <th>Sexe</th>
-    <th>Annee d'inscription</th>
-    <th>Diplome</th>
-    <th>Option</th>
-    <th>Modification</th>
-  </tr>";
-
-$bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
-$requete="select * from t_eleve";
-		$resultats=$bdd->query($requete);
-        $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
-        while($ligne) {
-            echo "<tr><td>".$ligne->el_id."<td>".$ligne->el_nom."<td>".$ligne->el_prenom."<td>".$ligne->el_ddn."<td>".$ligne->el_email."<td>".$ligne->el_sexe."<td>".$ligne->el_inscription."<td>".$ligne->el_diplome."<td>".$ligne->el_option."</td></tr>";
-            $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
-                    }
 ?>
+<?php 
+    require_once("conn.php");
+    $req = "select * from t_eleve";
+    $resultat = mysqli_query($conn,$req) or die(mysql_error());
+ ?>
+
+<html>
+ <body>
+    <table>
+        <tr>
+            <th>Numero</th>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Date de anissance</th>
+            <th>Sexe</th>
+            <th>Année d'inscription</th>
+            <th>Email</th>
+            <th>Diplome</th>
+            <th>Option</th>
+            <th>Modification</th>
+        </tr>
+        <?php  while ($etudiant = mysqli_fetch_assoc($resultat))  {  ?>
+        <tr>
+            <td><?php echo ($etudiant['el_id']); ?></td>
+            <td><?php echo ($etudiant['el_nom']); ?></td>
+            <td><?php echo ($etudiant['el_prenom']); ?></td>
+            <td><?php echo ($etudiant['el_ddn']); ?></td>
+            <td><?php echo ($etudiant['el_sexe']); ?></td>
+            <td><?php echo ($etudiant['el_inscription']); ?></td>
+            <td><?php echo ($etudiant['el_email']); ?></td>
+            <td><?php echo ($etudiant['el_diplome']); ?></td>
+            <td><?php echo ($etudiant['el_option']); ?></td>
+            <td><span><a href="info.php?code=<?php echo ($etudiant['el_id']); ?>">Editer</a></span></td>
+        </tr>
+        <?php } ?>
+    </table>
+ </body>
+ </html>
+
 <link rel="stylesheet" type="text/css" href="style.css">

@@ -1,17 +1,22 @@
 <?php
-	require_once("conn.php");
-	$id = $_GET['code'];	
-	$req="select * from t_eleve where el_id=$id";
-	$resultat = mysqli_query($conn,$req) or die(mysqli_error());
-	$etudiant = mysqli_fetch_assoc($resultat);
+    include("auth.php");
+    require_once("conn.php");
+    $id = $_GET['code'];    
+    $req="select * from t_eleve where el_id=$id";
+    $resultat = mysqli_query($conn,$req) or die(mysqli_error());
+    $etudiant = mysqli_fetch_assoc($resultat);
  ?>
  <html>
+  <link rel="stylesheet" type="text/css" href="style.css">
  <body>
- 	<div>
-        <h1><span>Remplir les informations un élève</span></h1>
+    <ul>
+        <li><a href='accueil.php'> Accueil</a></li>
+    </ul>
+    <div>
+        <h1><span>Changer les informations d'un élève</span></h1>
         <form method="post" action="modifier.php">
         <p><label style="color: black">SON NUMERO :</label>  
-        <p><input type="text" name="numero" value="<?php echo ($etudiant['el_id']); ?>"></p>	
+        <p><input type="text" name="numero" value="<?php echo ($etudiant['el_id']); ?>"></p>    
         <p><label style="color: black">NOM :</label>  
         <p><input type="text" name="nom" value="<?php echo ($etudiant['el_nom']); ?>"></p>
         <p> <label style="color: black">PRENOM :</label>  
@@ -39,7 +44,13 @@
         <p><input type="submit" value="envoyer mes informations"></p>
     </div>
     </form> 
+    <form method="post" action="delete.php">
+        <div>
+            <p><label>Son Numero</label> : 
+            <p><input type="text" name="numero2" required></p>
+            <h1><span>Supprimer un élève : </span></h1>
+            <p><input type="submit" value="Confirmer"></p>
+        </div>
+    </form>
  </body>
  </html>
-
- <link rel="stylesheet" type="text/css" href="">

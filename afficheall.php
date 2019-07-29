@@ -29,7 +29,7 @@
  			<td><?php echo ($etudiant['el_email']); ?></td>
  			<td><?php echo ($etudiant['el_diplome']); ?></td>
  			<td><?php echo ($etudiant['el_option']); ?></td>
- 			<td><span><a href="info1.php?code=<?php echo ($etudiant['el_id']); ?>">Editer</a></span></td>
+ 			<td><span><a href="info.php?code=<?php echo ($etudiant['el_id']); ?>">Editer</a></span></td>
  		</tr>
 		<?php } ?>
  	</table>

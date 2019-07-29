@@ -5,7 +5,6 @@ echo "<ul>
         <li><a href='accueil.php'> Acceuil</a></li>
         <li><a href='register.php'> S'inscrire</a></li>
         <li><a href='filtre.php'> Filtrage des élèves </a></li>
-        <li><a href='info.php'> Information sur un élèves </a></li>
         <li><a href='listefinal.php'> Listes des élèves </a></li>
     </ul>";
 
