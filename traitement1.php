@@ -15,7 +15,7 @@ $req->execute (array(
     'prenom' => htmlspecialchars($_POST['prenom']),
     'dates' => htmlspecialchars($_POST['dates']),
     'sexe' => htmlspecialchars($_POST['sexe']),
-    'date1' => date("Y-m-d"),
+    'date1' => date("Y"),
     'email' => htmlspecialchars($_POST['email']),
     'dip' => htmlspecialchars($_POST['diplome']),
     'option' => htmlspecialchars($_POST['options']),

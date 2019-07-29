@@ -10,12 +10,9 @@ echo "<ul>
     </ul>";
 
 echo "<h1><span>Voici la liste de tous les élèves :</span></h1>";
-echo "<table>
-  <tr>
-    <th>Nombre total</th>
-    <th>Homme</th>
-    <th>Femme</th>
-  </tr>";
+echo "<span class='nombre'><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :</p>
+      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :</p>
+      <p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :</p></span>";
 
 echo "<table>
   <tr>

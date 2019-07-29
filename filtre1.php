@@ -19,7 +19,7 @@ echo "<table>
   <tr>
     <th>Numero</th>
     <th>Nom</th>
-    <th>Prénom</th>
+    <th>Prenom</th>
     <th>Date de naissance</th>
     <th>Adresse mail</th>
     <th>Sexe</th>
@@ -43,7 +43,7 @@ echo "<table>
   <tr>
     <th>Numero</th>
     <th>Nom</th>
-    <th>Prénom</th>
+    <th>Prenom</th>
     <th>Date de naissance</th>
     <th>Adresse mail</th>
     <th>Sexe</th>
