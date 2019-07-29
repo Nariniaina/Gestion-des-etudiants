@@ -3,20 +3,23 @@ include("auth.php");
 include('conn.php');
 try
 {
- $bdd = new PDO('mysql:host=localhost;dbname=gestion_etudiant', 'root', '');
+ $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
 }
 catch(Exception $e)
 {
         die('Erreur : '.$e->getMessage());
 }
-$req= $bdd->prepare('INSERT INTO eleve(el_nom, el_prenom, el_ddn, el_adressemail, el_diplome, el_opt) VALUES(:nom, :prenom, :dates, :email, :diplome, :options)');
+include('conn.php');
+$req= $bdd->prepare('INSERT INTO t_eleve(el_nom, el_prenom, el_ddn, el_sexe, el_inscription, el_email, el_diplome, el_option) VALUES(:nom, :prenom, :dates, :sexe, :date1, :email, :dip ,:option)');
 $req->execute (array(
     'nom' => htmlspecialchars($_POST['nom']),
     'prenom' => htmlspecialchars($_POST['prenom']),
     'dates' => htmlspecialchars($_POST['dates']),
+    'sexe' => htmlspecialchars($_POST['sexe']),
+    'date1' => date("Y-m-d"),
     'email' => htmlspecialchars($_POST['email']),
-    'diplome' => htmlspecialchars($_POST['diplome']),
-    'options' => htmlspecialchars($_POST['options']),
+    'dip' => htmlspecialchars($_POST['diplome']),
+    'option' => htmlspecialchars($_POST['options']),
 ));
 ?>
 <!DOCTYPE html>
@@ -35,32 +38,42 @@ $req->execute (array(
         <li><a href='filtre.php'> Filtrage des élèves </a></li>
         <li><a href='info.php'> Information sur un élèves </a></li>
         <li><a href='listefinal.php'> Listes des élèves </a></li>
+        <span style="float: right; color: white; padding: 13px;" style="color: white;"><?php echo "Bienvenue, ";echo $_SESSION['username']; ?></span>
     </ul>
+    <span style="float: right">
+        <form method="post" action="logout.php">
+            <p><button class="button button3">Se déconnecter</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+        </form>
+    </span>
     <div>
-        <h1><span>Remplir les informations sur vous</span></h1>
+        <h1><span>Remplir les informations un élève</span></h1>
         <form method="post" action="traitement.php">
-        <p><label>NOM</label> : 
+        <p><label style="color: black">NOM :</label>
         <p><input type="text" name="nom" required></p>
-        <p> <label>PRENOM</label> : 
+        <p> <label style="color: black">PRENOM :</label>
         <p><input type="text" name="prenom" required></p>
-        <p><label>DATE DE NAISSANCE</label> : 
+        <p><label style="color: black">DATE DE NAISSANCE :</label>
         <p><input type="date" name='dates' required></p>
-        <p><label>ADDRESSE EMAIL</label> :  
+        <p><label style="color: black">SEXE :</label>   </p>
+        <select name="sexe" required>
+            <option value="H">Homme</option>
+            <option value="F">Femme</option>
+        </select></p>
+        <p><label style="color: black">ADDRESSE EMAIL :</label>   
         <p><input type="email" name="email" required></p>
-        <p><label>DIPLOME </label> : </p>
+        <p><label style="color: black">DIPLOME :</label>  </p>
         <select name="diplome" required>
             <option value="A2">Serie A2</option>
             <option value="D">D</option>
-        <option value="C">C</option>   
+            <option value="C">C</option>   
         </select></p>
-        <p><label>FILIAIRE</label> : </p>
+        <p><label style="color: black">OPTION :</label>  </p>
         <select name="options" required>
             <option value="DEV">intégration et développement</option>
             <option value="RSI">réseaux et systèmes </option>
-        </select>
-        </p>
+        </select></p>
         <p><input type="submit" value="envoyer mes informations"></p>
     </div>
-</form>
+    </form>
 </body>
 </html>

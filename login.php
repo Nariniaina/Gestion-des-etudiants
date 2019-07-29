@@ -1,12 +1,12 @@
 <?php
-	if(isset($_POST['login'])){	
+	if(isset($_POST['login'])){
 		require('db.php');
 		session_start();
 		include('conn.php');
 		$username=$_POST['username'];
 		$password=$_POST['password'];
 		$password=md5($password);
-		$query=mysqli_query($conn,"select * from `login` where lo_username='$username' && lo_password='$password'");
+		$query=mysqli_query($conn,"select * from `t_login` where lo_username='$username' && lo_password='$password'");
 	
 		if (mysqli_num_rows($query) == 0){
 			$_SESSION['message']="Login Failed. User not Found!";

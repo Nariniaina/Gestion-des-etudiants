@@ -27,32 +27,32 @@
     <div>
         <h1><span>Remplir les informations un élève</span></h1>
         <form method="post" action="traitement.php">
-        <p><label style="color: white">NOM :</label>  
+        <p><label style="color: black">NOM :</label>  
         <p><input type="text" name="nom" required></p>
-        <p> <label style="color: white">PRENOM</label> : 
+        <p> <label style="color: black">PRENOM :</label>  
         <p><input type="text" name="prenom" required></p>
-        <p><label style="color: white">DATE DE NAISSANCE</label> :
+        <p><label style="color: black">DATE DE NAISSANCE :</label>
         <p><input type="date" name='dates' required></p>
-        <p><label style="color: white">ADDRESSE EMAIL</label> :
-        <p><input type="email" name="email" required></p>
-        <p><label style="color: white">SEXE</label> : </p>
-        <select name="options" required>
-            <option value="H">H</option>
-            <option value="F">F</option>
+        <p><label style="color: black">SEXE :</label>   </p>
+        <select name="sexe" required>
+            <option value="H">Homme</option>
+            <option value="F">Femme</option>
         </select></p>
-        <p><label style="color: white">DIPLOME </label> : </p>
+        <p><label style="color: black">ADDRESSE EMAIL :</label>   
+        <p><input type="email" name="email" required></p>
+        <p><label style="color: black">DIPLOME :</label>  </p>
         <select name="diplome" required>
             <option value="A2">Serie A2</option>
             <option value="D">D</option>
             <option value="C">C</option>   
         </select></p>
-        <p><label style="color: white">OPTION</label> : </p>
+        <p><label style="color: black">OPTION :</label>  </p>
         <select name="options" required>
             <option value="DEV">intégration et développement</option>
             <option value="RSI">réseaux et systèmes </option>
         </select></p>
         <p><input type="submit" value="envoyer mes informations"></p>
     </div>
-</form>
+    </form>
 </body>
 </html>
