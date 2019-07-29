@@ -14,9 +14,11 @@
     $datefinal = ($etudiant['ex_date']);
     $matid = ($etudiant1['sa_id']);
     $said = ($etudiant2['mat_id']);
+?>
+<?php 
     $requete = "select el.el_id as id,el.el_nom as nom,el.el_prenom as prenom,el.el_email as email, el.el_sexe as sexe, el.el_option as option from t_eleve el inner join a_examen ex on ex.el_id = el.el_id where ex.sa_id = '$said' && ex.ex_date = '$datefinal' && ex.mat_id = '$matid';";
     $res3 = mysqli_query($conn,$requete) or die(mysqli_error());
-?>
+ ?>
 <table>
         <tr>
             <th>NOM</th>
