@@ -26,7 +26,7 @@
         <p><label style="color: black">SEXE :</label>   </p>
         <select name="sexe">
             <option value="<?php echo ($etudiant['el_sexe']); ?>"><?php 
-            if ($etudiant['el_sexe'] == 'F') {
+            if ($etudiant['el_sexe'] = 'H') {
                 echo "Femme";
                 $contraire = "H";
             }
@@ -36,8 +36,8 @@
             }
             ?></option>
             <option value="<?php echo ($contraire); ?>"><?php 
-            if ($contraire == 'F') {
-                echo "Femme";
+            if ($contraire = 'F') {
+                echo "Homme";
             }
             else {
                 echo "Homme";

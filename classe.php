@@ -1,3 +1,14 @@
+<?php 
+    include("auth.php");
+    require_once("conn.php");
+    $rs = mysqli_query($conn,"select * from t_eleve") or die(mysqli_error());
+    $option = NULL;
+    ?>  
+<?php 
+    require_once("conn.php");
+    $rs2 = mysqli_query($conn,"select * from t_classe") or die(mysqli_error());
+    $option2 = NULL;
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +16,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Absence</title>
+    <title>Classe</title>
 </head>
 <body>
     <span>
@@ -22,29 +33,27 @@
         </ul>
     </span>
 </body>
-<?php
-echo "<div><table>
-  <tr>
-    <th>Numero</th>
-    <th>Classe</th>
-  </tr>";
-
-$bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
-$requete="select * from t_classe";
-        $resultats=$bdd->query($requete);
-        $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
-        while($ligne) {
-            echo "<tr><td>".$ligne->cla_id."<td>".$ligne->cla_nom."</td></tr>";
-            $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
-                    }
-?>
 <div>
     <h1><span>Choisir la classe de l'etudiant</span></h1>
     <form method="post" action="traitement4.php">
-    <p><label style="color: black">NUMERO DE L'ELEVE :</label>  
-    <p><input type="text" name="numero" required></p>
-    <p><label style="color: black">NUMERO DE LA CLASSE :</label>   </p>
-    <p><input type="text" name="classe" required></p>
+    <p><label style="color: black">PRENOM DE L'ELEVE :</label> 
+    <p>
+        <select> 
+            <option value = "<?php while($row = mysqli_fetch_assoc($rs))
+        {
+          $option .= '<option value = "'.$row['el_id'].'">'.$row['el_prenom'].'</option>';
+        }  ?>" name="numero"><?php echo $option; ?></option>
+        </select>
+    </p>
+    <p><label style="color: black">NOM DE LA CLASSE :</label>   </p>
+    <p>
+        <select> 
+            <option value = "<?php while($row = mysqli_fetch_assoc($rs2))
+        {
+          $option2 .= '<option value = "'.$row['cla_id'].'">'.$row['cla_nom'].'</option>';
+        }  ?>" name="classe"><?php echo $option2; ?></option>
+        </select>
+    </p>
     <p><input type="submit" value="CONFIRMER"></p>
     </form>
 </div>
@@ -59,18 +68,3 @@ $requete="select * from t_classe";
 </div>
 </body>
 </html>
-<?php
-include("auth.php");
-include('conn.php');
-$bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
-
-echo "<h1><div><span>Voici la liste de tous les classes :</span></h1>";
-echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
-?>
-<?php
-include('conn.php');
-$query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
-$row=mysqli_fetch_array($query);
-?>
-<?php echo $row['total'],"</div>"; 
-?>

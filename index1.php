@@ -11,6 +11,39 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body id="acc">
+      <h1><label style="color: #cccccc">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspRemplir les informations sur vous</h1> 
+  <div>
+    <div class="login">
+      <form method="post" action="traitement1.php">
+              <h1><label style="color: white">LOGIN</h1>  
+              <p><label style="color: white">NOM :</label>  
+              <p><input type="text" name="nom" required style="
+                        width: 100%;
+                        padding: 12px 12px;
+                        margin: 0px 0px;
+                        display: inline-block;
+                        border: 3px solid #cccccc;
+                        border-radius: 70px;
+                        box-sizing: border-box;"></p>
+              <p> <label style="color: white">PRENOM :</label>  
+              <p><input type="text" name="prenom" required style="
+                        width: 100%;
+                        padding: 12px 20px;
+                        margin: 0px 0px;
+                        display: inline-block;
+                        border: 3px solid #cccccc;
+                        border-radius: 70px;
+                        box-sizing: border-box;"></p>
+              <p><input type="submit" value="envoyer mes informations" style="
+                        border-radius: 70px; width: 100%;
+                        color: white;
+                        padding: 14px 20px;
+                        border: 3px solid #cccccc;
+                        margin: 8px 0;"></p>
+          </form>
+      <div>
+    </div>
+  </div>
   <div>
          <form method="post" action="traitement1.php" class="">
               <p><label style="color: #cccccc">NOM :</label>  
@@ -93,7 +126,9 @@
                   <option value="DEV">intégration et développement</option>
                   <option value="RSI">réseaux et systèmes </option>
               </select></p>
-              <p><input type="submit" value="envoyer mes informations"></p>
+              <br>
+              <p><input type="submit" value="envoyer mes informations" style="border-radius: 7px;
+              border: 3px solid #cccccc;"></p>
           </form>
     </div>
 

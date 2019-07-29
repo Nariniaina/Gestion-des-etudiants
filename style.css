@@ -154,6 +154,21 @@ input[type=submit]:hover {
   color: white;
 }
 
+.login {
+  border: none;
+  border-radius: 1.5rem;
+  background: rgb(255, 53, 71);
+  font-weight: 600;
+  color: #555;
+  margin-top: 20px;
+  padding: 50px;
+  float: right;
+  border-top-left-radius: 40% 50%;
+  border-bottom-left-radius: 5% 50%;
+  padding-left :100px;
+  padding-right :80px; 
+}
+
 div {
   background-color: transparent;
   padding: 20px;
