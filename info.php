@@ -10,7 +10,7 @@
     <li><a href='listefinal.php'> Listes des élèves </a></li>
 </ul>
 <link rel="stylesheet" type="text/css" href="style.css">
-<form method="post" action="update1.php">
+<form method="post" action="update.php">
     <div>
         <p><label>Son Numero</label> : 
         <p><input type="text" name="numero" required></p>

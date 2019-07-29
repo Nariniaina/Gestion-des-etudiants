@@ -17,6 +17,8 @@
         <li><a href='filtre.php'> Filtrage des élèves </a></li>
         <li><a href='info.php'> Information sur un élèves </a></li>
         <li><a href='listefinal.php'> Listes des élèves </a></li>
+        <span style="float: right;" style="color: white;"> <li><a href='gestion.php'>|&nbsp&nbsp&nbspApplication&nbsp&nbsp&nbsp|</a></li>
+        </span>
         <span style="float: right; color: white; padding: 13px;" style="color: white;"><?php echo "Bienvenue, ";echo $_SESSION['username']; ?></span>
     </ul>
     <span style="float: right">

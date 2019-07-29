@@ -36,7 +36,7 @@ $req->execute (array(
 <body>
 <div id="particles-js">
   <form method="POST" action="login.php">
-    <h1 style="color: white; ">Remplir les informations sur vous</h1>
+    <h1 style="color: white; ">Remplir les informations sur vous :</h1>
     <div id="particle-canvas">
         <span  style="float: right">
         <h1 style="color: white">Login</h1>
