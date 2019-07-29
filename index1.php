@@ -41,7 +41,7 @@
         <p><input type="text" name="nom" required></p>
         <p> <label style="color: white">PRENOM :</label>  
         <p><input type="text" name="prenom" required></p>
-        <p><label style="color: white">DATE DE NAISSANCE :</label>
+        <p><label style="color: white">DATE DE NAISSANCE :</label>  
         <p><input type="date" name='dates' required></p>
         <p><label style="color: white">SEXE :</label>   </p>
         <select name="sexe" required>

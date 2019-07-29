@@ -27,26 +27,30 @@
     <div>
         <h1><span>Remplir les informations un élève</span></h1>
         <form method="post" action="traitement.php">
-        <p><label>NOM</label> : 
+        <p><label style="color: white">NOM :</label>  
         <p><input type="text" name="nom" required></p>
-        <p> <label>PRENOM</label> : 
+        <p> <label style="color: white">PRENOM</label> : 
         <p><input type="text" name="prenom" required></p>
-        <p><label>DATE DE NAISSANCE</label> : 
+        <p><label style="color: white">DATE DE NAISSANCE</label> :
         <p><input type="date" name='dates' required></p>
-        <p><label>ADDRESSE EMAIL</label> :  
+        <p><label style="color: white">ADDRESSE EMAIL</label> :
         <p><input type="email" name="email" required></p>
-        <p><label>DIPLOME </label> : </p>
+        <p><label style="color: white">SEXE</label> : </p>
+        <select name="options" required>
+            <option value="H">H</option>
+            <option value="F">F</option>
+        </select></p>
+        <p><label style="color: white">DIPLOME </label> : </p>
         <select name="diplome" required>
             <option value="A2">Serie A2</option>
             <option value="D">D</option>
-        <option value="C">C</option>   
+            <option value="C">C</option>   
         </select></p>
-        <p><label>FILIAIRE</label> : </p>
+        <p><label style="color: white">OPTION</label> : </p>
         <select name="options" required>
             <option value="DEV">intégration et développement</option>
             <option value="RSI">réseaux et systèmes </option>
-        </select>
-        </p>
+        </select></p>
         <p><input type="submit" value="envoyer mes informations"></p>
     </div>
 </form>
