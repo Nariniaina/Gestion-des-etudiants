@@ -1,6 +1,13 @@
 <?php
     session_start();
+    
+    if (!isset($_SESSION['id']) ||(trim ($_SESSION['id']) == '')) {
+        header('index.php');
+        exit();
+    }
     include('conn.php');
+    $query=mysqli_query($conn,"select * from login where lo_id='".$_SESSION['id']."'");
+    $row=mysqli_fetch_assoc($query);
 ?>
 <!DOCTYPE html>
 <html lang="en">
