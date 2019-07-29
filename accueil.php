@@ -17,14 +17,15 @@
         <li><a href='filtre.php'> Filtrage des élèves </a></li>
         <li><a href='info.php'> Information sur un élèves </a></li>
         <li><a href='listefinal.php'> Listes des élèves </a></li>
+        <span style="float: right; color: white; padding: 13px;" style="color: white;"><?php echo "Bienvenue, ";echo $_SESSION['username']; ?></span>
     </ul>
-    <div>
+    <span style="float: right">
         <form method="post" action="logout.php">
-        <p><input type="submit" value="Se déconnecter"></p>
+            <p><button class="button button3">Se déconnecter</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
         </form>
-    </div>
+    </span>
     <div>
-        <h1><span>Remplir les informations sur vous</span></h1>
+        <h1><span>Remplir les informations un élève</span></h1>
         <form method="post" action="traitement.php">
         <p><label>NOM</label> : 
         <p><input type="text" name="nom" required></p>

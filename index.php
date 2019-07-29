@@ -20,9 +20,9 @@
     <h1 style="color: white; ">Remplir les informations sur vous</h1>
     <div id="particle-canvas">
         <span  style="float: right">
-        <h1 style="color: white">Login</h1>
-		<label style="color: white">Username:</label> <input type="text" value="<?php if (isset($_COOKIE["user"])){echo $_COOKIE["user"];}?>" name="username"><br><br>
-		<label style="color: white">Password:</label> <input type="password" value="<?php if (isset($_COOKIE["pass"])){echo $_COOKIE["pass"];}?>" name="password"><br><br>
+        <h1 style="color: white">Login</h1><br></br>
+		<label style="color: white">Username :</label> <input type="text" value="<?php if (isset($_COOKIE["user"])){echo $_COOKIE["user"];}?>" name="username"><br><br>
+		<label style="color: white">Password :</label> <input type="password" value="<?php if (isset($_COOKIE["pass"])){echo $_COOKIE["pass"];}?>" name="password"><br><br>
 		<input type="checkbox" name="remember"> <span style="color: white">Remember me</span><br><br>
 		<input type="submit" value="S'inscrire" name="login">
 		<br></br>
