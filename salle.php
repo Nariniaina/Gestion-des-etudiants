@@ -10,8 +10,8 @@
 <body>
     <span>
         <ul style="background-color: MediumSeaGreen; list-style-type: none; overflow: hidden;">
-            <li style="float: left;"><a href='accueil.php'> Accueil</a></li>
-            <li style="float: left;"><a href='gestion.php'> Application</a></li>
+            <li style="float: left; font-size: 22px;"><a href='accueil.php'> ⃝&nbsp&nbsp&nbsp</a></li>
+            <li style="float: left; font-size: 25px;"><a href='gestion.php'> Application</a></li>
         </ul>
     </span>
 </body>

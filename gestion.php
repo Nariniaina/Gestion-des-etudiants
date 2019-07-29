@@ -13,8 +13,8 @@
 <body>
     <span>
         <ul style="background-color: MediumSeaGreen; list-style-type: none; overflow: hidden;">
-            <li style="float: left;"><a href='accueil.php'> Accueil</a></li>
-            <li style="float: left;"><a href='gestion.php'> Application</a></li>
+            <li style="float: left; font-size: 22px;"><a href='accueil.php'> ⃝&nbsp&nbsp&nbsp</a></li>
+            <li style="float: left; font-size: 25px;"><a href='gestion.php'> Application</a></li>
         </ul>
     </span>
     <div>
@@ -25,14 +25,14 @@
             <td>
                 <span style="float: left" >
                     <form method="post" action="retard.php">
-                        <p><button class="button button3">Retard</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p><button class="button button4">Retard</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>
                 </span>    
             </td>
             <td>
                 <span style="float: left">
                     <form method="post" action="absence.php">
-                        <p><button class="button button3">Absence</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p><button class="button button4">Absence</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>
                 </span>    
             </td>
@@ -46,28 +46,28 @@
             <td>
                 <span style="float: left">
                     <form method="post" action="classe.php">
-                        <p><button class="button button3">Répartition des classes</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p><button class="button button4">Répartition des classes</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>
                 </span>    
             </td>
             <td>
                 <span style="float: left">
                     <form method="post" action="matiere.php">
-                        <p><button class="button button3">Répartition des Matières</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p><button class="button button4">Répartition des Matières</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>
                 </span>    
             </td>
             <td>
                 <span style="float: left">
                     <form method="post" action="salle.php">
-                        <p><button class="button button3">Répartition des salles</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p><button class="button button4">Répartition des salles</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>
                 </span>    
             </td>
             <td>
                 <span style="float: left">
                     <form method="post" action="gest_temps.php">
-                        <p><button class="button button3">Gestion de l'emploie du temps</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p><button class="button button4">Gestion de l'emploie du temps</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>
                 </span>    
             </td>
@@ -81,7 +81,7 @@
             <td>
                 <span style="float: left">
                     <form method="post" action="examen.php">
-                        <p><button class="button button3">Programmer un examen</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                        <p><button class="button button4">Programmer un examen</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>
                 </span>    
             </td>
