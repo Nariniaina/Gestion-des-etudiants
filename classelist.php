@@ -104,16 +104,7 @@ include('conn.php');
 $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
 
 echo "<h1><div><span>Voici la liste de tous les étudiants sans classe  :</span></h1>";
-echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
 ?>
-
-<?php
-	include('conn.php');
-	$query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
-	$row=mysqli_fetch_array($query);
-		?>
-	<?php echo $row['total'],"</div>"; 
-		?>
 	<?php 
 		require_once("conn.php");
 		$req = "select el.el_id, el_nom, el.el_prenom ,el.el_inscription, el.el_email,el.el_option, cl.cla_nom from t_eleve el left JOIN (a_classe cla inner join t_classe cl on cla.cla_id = cl.cla_id) on el.el_id = cla.el_id HAVING cla_nom is NULL;";
@@ -146,15 +137,7 @@ echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
  <?php 
         include('conn.php');
         echo "<h1><div><span>Voici la liste de tous les étudiants en L1 </span></h1>";
-        echo "<p><div>Nombre total :&nbsp"
         ?>
-        <?php
-            include('conn.php');
-            $query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
-            $row=mysqli_fetch_array($query);
-                ?>
-            <?php echo $row['total'],"</div>"; 
-                ?>
             <?php 
                 require_once("conn.php");
                 $req = "select el.el_id, el_nom, el.el_prenom ,el.el_inscription, el.el_email,el.el_option, cl.cla_nom as classe from t_eleve el inner JOIN (a_classe cla inner join t_classe cl on cla.cla_id = cl.cla_id) on el.el_id = cla.el_id HAVING classe like 'L1%'";
@@ -187,15 +170,7 @@ echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
         <?php 
         include('conn.php');
         echo "<h1><div><span>Voici la liste de tous les étudiants en L2 </span></h1>";
-        echo "<p><div>Nombre total :&nbsp"
         ?>
-        <?php
-            include('conn.php');
-            $query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
-            $row=mysqli_fetch_array($query);
-                ?>
-            <?php echo $row['total'],"</div>"; 
-                ?>
             <?php 
                 require_once("conn.php");
                 $req = "select el.el_id, el_nom, el.el_prenom ,el.el_inscription, el.el_email,el.el_option, cl.cla_nom as classe from t_eleve el inner JOIN (a_classe cla inner join t_classe cl on cla.cla_id = cl.cla_id) on el.el_id = cla.el_id HAVING classe like 'L2%'";
@@ -228,15 +203,7 @@ echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
             <?php 
         include('conn.php');
         echo "<h1><div><span>Voici la liste de tous les étudiants en L3 </span></h1>";
-        echo "<p><div>Nombre total :&nbsp"
         ?>
-        <?php
-            include('conn.php');
-            $query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
-            $row=mysqli_fetch_array($query);
-                ?>
-            <?php echo $row['total'],"</div>"; 
-                ?>
             <?php 
                 require_once("conn.php");
                 $req = "select el.el_id, el_nom, el.el_prenom ,el.el_inscription, el.el_email,el.el_option, cl.cla_nom as classe from t_eleve el inner JOIN (a_classe cla inner join t_classe cl on cla.cla_id = cl.cla_id) on el.el_id = cla.el_id HAVING classe like 'L3%'";
@@ -269,15 +236,7 @@ echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
             <?php 
         include('conn.php');
         echo "<h1><div><span>Voici la liste de tous les étudiants en M1 </span></h1>";
-        echo "<p><div>Nombre total :&nbsp"
         ?>
-        <?php
-            include('conn.php');
-            $query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
-            $row=mysqli_fetch_array($query);
-                ?>
-            <?php echo $row['total'],"</div>"; 
-                ?>
             <?php 
                 require_once("conn.php");
                 $req = "select el.el_id, el_nom, el.el_prenom ,el.el_inscription, el.el_email,el.el_option, cl.cla_nom as classe from t_eleve el inner JOIN (a_classe cla inner join t_classe cl on cla.cla_id = cl.cla_id) on el.el_id = cla.el_id HAVING classe like 'M1%'";
@@ -310,15 +269,7 @@ echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
             <?php 
         include('conn.php');
         echo "<h1><div><span>Voici la liste de tous les étudiants en M2 </span></h1>";
-        echo "<p><div>Nombre total :&nbsp"
         ?>
-        <?php
-            include('conn.php');
-            $query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
-            $row=mysqli_fetch_array($query);
-                ?>
-            <?php echo $row['total'],"</div>"; 
-                ?>
             <?php 
                 require_once("conn.php");
                 $req = "select el.el_id, el_nom, el.el_prenom ,el.el_inscription, el.el_email,el.el_option, cl.cla_nom as classe from t_eleve el inner JOIN (a_classe cla inner join t_classe cl on cla.cla_id = cl.cla_id) on el.el_id = cla.el_id HAVING classe like 'M2%'";
