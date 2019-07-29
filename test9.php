@@ -6,7 +6,7 @@
     $option2 = NULL;
     while($row = mysqli_fetch_assoc($rs))
 		{
-		  $option .= '<option value = "'.$row['el_id'].'">'.$row['el_nom'].'</option>';
+		  $option .= $row['el_id'].'';
 		}  
 	while($row = mysqli_fetch_assoc($rs2))
 		{

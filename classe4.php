@@ -1,14 +1,9 @@
 <?php 
     include("auth.php");
     require_once("conn.php");
-    $rs = mysqli_query($conn,"select * from t_eleve") or die(mysqli_error());
-    $option = NULL;
-    ?>  
-<?php 
-    require_once("conn.php");
-    $rs2 = mysqli_query($conn,"select * from t_classe") or die(mysqli_error());
-    $option2 = NULL;
-    ?>
+    $query = "SELECT * from t_eleve";
+    $result = mysqli_query($conn, $query);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,29 +30,19 @@
 </body>
 <div>
     <h1><span>Choisir la classe de l'etudiant</span></h1>
-    <form method="post" action="traitement4.php">
+    <form method="post" action="traitement13.php">
     <p><label style="color: black">PRENOM DE L'ELEVE :</label> 
     <p>
-        <select> 
-            <option value = "<?php while($row = mysqli_fetch_assoc($rs))
-        {
-          $option .= '<option value = "'.$row['el_id'].'">'.$row['el_prenom'].'</option>';
-        }  ?>"><?php echo $option; ?></option>
+        <select>
+            <?php   $opt = "<select name = 'team'>";
+                    while ($row = mysqli_fetch_assoc($result)) {
+                    $opt .= "<option value = '{$row['el_id']}'>{$row{'el_prenom'}}</option>";
+                                                                    }
+                    $opt .= "</select>" 
+            ?>
         </select>
     </p>
-    <select name="numero" required>
-                  <option value=""></option>
-                  <option value=""></option>
-    </select></p>
     <p><label style="color: black">NOM DE LA CLASSE :</label>   </p>
-    <p>
-        <select> 
-            <option name="classe" value = "<?php while($row = mysqli_fetch_assoc($rs2))
-        {
-          $option2 .= '<option value = "'.$row['cla_id'].'">'.$row['cla_nom'].'';
-        }  ?>"><?php echo $option2; ?></option>
-        </select>
-    </p>
     <p><input type="submit" value="CONFIRMER"></p>
     </form>
 </div>

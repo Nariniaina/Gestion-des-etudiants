@@ -66,7 +66,7 @@ echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
 
 <?php
 	include('conn.php');
-	$query=mysqli_query($conn,"select count(el.el_id) as total from t_eleve el right JOIN (a_classe cla inner join t_classe cl on cla.cla_id = cl.cla_id) on el.el_id = cla.el_id;");
+	$query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
 	$row=mysqli_fetch_array($query);
 		?>
 	<?php echo $row['total'],"</div>"; 

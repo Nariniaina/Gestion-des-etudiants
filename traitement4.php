@@ -14,4 +14,6 @@
         mysqli_query($connect,$req);
 ?>
 <?php 
-header('location:classe.php');?>
+    echo "$cla";
+    echo "$id";
+ ?>
