@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="style.css">
  <body>
     <ul>
-        <li><a href='accueil.php'> Accueil</a></li>
+        <li><a href='accueil.php'> Retour</a></li>
     </ul>
     <div>
         <h1><span>Changer les informations d'un élève</span></h1>
@@ -44,7 +44,7 @@
         <p><input type="submit" value="envoyer mes informations"></p>
     </div>
     </form> 
-    <form method="post" action="delete2.php">
+    <form method="post" action="delete.php">
         <div>
             <p><label>Son Numero</label> : 
             <p><input type="text" name="numero2" value="<?php echo ($etudiant['el_id']); ?>"></p>
