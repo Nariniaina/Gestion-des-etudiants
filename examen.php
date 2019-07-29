@@ -18,14 +18,16 @@
         </ul>
     </span>
     <div>
-        <h1><span>Remplir les informations sur le retard</span></h1>
-        <form method="post" action="traitement2.php">
+        <h1><span>Programmer l'examen</span></h1>
+        <form method="post" action="traitement5.php">
         <p><label style="color: black">NUMERO DE L'ELEVE :</label>  
         <p><input type="text" name="numero" required></p>
-        <p> <label style="color: black">MOTIF DU RETARD :</label>  
-        <p><input type="text" name="motif" required></p>
-        <p><label style="color: black">HEURE DU RETARD :</label>
-        <p><input type="time" name='time'></p>
+        <p> <label style="color: black">DATE DE L'EXAMEN :</label>  
+        <p><input type="date" name="date" required></p>
+        <p><label style="color: black">NUMERO DE LA SALLE D'EXAMEN :</label>
+        <p><input type="text" name='numsalle'></p>
+        <p><label style="color: black">NUMERO DE LA MATIERE :</label>
+        <p><input type="text" name='matiere'></p>
         <p><input type="submit" value="CONFIRMER"></p>
     </div>
 </body>

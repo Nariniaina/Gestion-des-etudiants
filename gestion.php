@@ -52,6 +52,20 @@
             </td>
             <td>
                 <span style="float: left">
+                    <form method="post" action="matiere.php">
+                        <p><button class="button button3">Répartition des Matières</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </form>
+                </span>    
+            </td>
+            <td>
+                <span style="float: left">
+                    <form method="post" action="salle.php">
+                        <p><button class="button button3">Répartition des salles</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+                    </form>
+                </span>    
+            </td>
+            <td>
+                <span style="float: left">
                     <form method="post" action="gest_temps.php">
                         <p><button class="button button3">Gestion de l'emploie du temps</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>

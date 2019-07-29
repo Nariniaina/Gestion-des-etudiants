@@ -3,7 +3,7 @@ include("auth.php");
 
 echo "<ul>
         <li><a href='accueil.php'> Accueil</a></li>
-        <li><a href='register2.php'> S'inscrire</a></li>
+        <li><a href='register.php'> S'inscrire</a></li>
         <li><a href='filtre.php'> Filtrage des élèves </a></li>
         <li><a href='info.php'> Information sur un élèves </a></li>
         <li><a href='listefinal.php'> Listes des élèves </a></li>
@@ -12,7 +12,7 @@ echo "<ul>
 include('conn.php');
 $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
 
-echo "<h1><span>Voici la liste de tous les élèves :</span></h1>";
+echo "<h1><span>&nbsp&nbspVoici la liste de tous les élèves :</span></h1>";
 echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
 ?>
 <?php

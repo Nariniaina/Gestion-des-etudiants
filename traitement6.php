@@ -1,8 +1,7 @@
 <?php
     session_start();
-    $cla = htmlentities(trim($_POST['classe']));
-    $id = htmlentities(trim($_POST['numero'])); //enleve tous les caractere speciaux, declaration des variables
-    $trn_date = date("Y-m-d");
+    $matiere = htmlentities(trim($_POST['matiere']));
+    $prof = htmlentities(trim($_POST['prof']));
     include('conn.php');
     $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
         ?>
@@ -10,8 +9,8 @@
         include('conn.php');
         $connect = mysqli_connect('localhost','root','') or die ('error'); //connexion au serveur SQL
         mysqli_select_db($connect,"gestioneleve");  //connexion à la base
-        $req="INSERT INTO a_classe(cla_id,el_id,aclasse_date) values ('$cla','$id','$trn_date')";  //requete SQL insertion 
+        $req="INSERT INTO t_matiere(mat_nom,mat_prof) values ('$matiere','$prof')";  //requete SQL insertion 
         mysqli_query($connect,$req);
 ?>
 <?php 
-header('location:classe.php');?>
+header('location:matiere.php');?>

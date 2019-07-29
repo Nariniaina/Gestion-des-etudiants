@@ -1,8 +1,6 @@
 <?php
     session_start();
-    $cla = htmlentities(trim($_POST['classe']));
-    $id = htmlentities(trim($_POST['numero'])); //enleve tous les caractere speciaux, declaration des variables
-    $trn_date = date("Y-m-d");
+    $salle = htmlentities(trim($_POST['salle']));
     include('conn.php');
     $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
         ?>
@@ -10,8 +8,8 @@
         include('conn.php');
         $connect = mysqli_connect('localhost','root','') or die ('error'); //connexion au serveur SQL
         mysqli_select_db($connect,"gestioneleve");  //connexion à la base
-        $req="INSERT INTO a_classe(cla_id,el_id,aclasse_date) values ('$cla','$id','$trn_date')";  //requete SQL insertion 
+        $req="INSERT INTO t_salle(sa_nom) values ('$salle')";  //requete SQL insertion 
         mysqli_query($connect,$req);
 ?>
 <?php 
-header('location:classe.php');?>
+header('location:salle.php');?>

@@ -19,39 +19,29 @@
 echo "<div><table>
   <tr>
     <th>Numero</th>
-    <th>Classe</th>
+    <th>Nom</th>
+    <th>Professeur</th>
   </tr>";
 
 $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
-$requete="select * from t_classe";
+$requete="select * from t_matiere";
         $resultats=$bdd->query($requete);
         $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
         while($ligne) {
-            echo "<tr><td>".$ligne->cla_id."<td>".$ligne->cla_nom."</td></tr>";
+            echo "<tr><td>".$ligne->mat_id."<td>".$ligne->mat_nom."<td>".$ligne -> mat_prof."</td></tr>";
             $ligne = $resultats->fetch(PDO::FETCH_OBJ) ;
                     }
 ?>
 <div>
-    <h1><span>Choisir la classe de l'etudiant</span></h1>
-    <form method="post" action="traitement4.php">
-    <p><label style="color: black">NUMERO DE L'ELEVE :</label>  
-    <p><input type="text" name="numero" required></p>
-    <p><label style="color: black">NUMERO DE LA CLASSE :</label>   </p>
-    <p><input type="text" name="classe" required></p>
+    <h1><span>Créer une matière </span></h1>
+    <form method="post" action="traitement6.php">
+    <p><label style="color: black">NOM DE LA MATIERE :</label>  
+    <p><input type="text" name="matiere" required></p>
+    <p><label style="color: black">PROFESSEUR EN CHARGE :</label>   </p>
+    <p><input type="text" name="prof" required></p>
     <p><input type="submit" value="CONFIRMER"></p>
     </form>
 </div>
-
-<div>
-    <h1><span>Créer une classe</span></h1>
-    <form method="post" action="createclasse.php">
-    <p><label style="color: black">NOM DE LA CLASSE :</label>  
-    <p><input type="text" name="nomclasse" required></p>
-    <p><input type="submit" value="CREER"></p>
-    </form>
-</div>
-</body>
-</html>
 <?php
 include("auth.php");
 include('conn.php');
@@ -62,7 +52,7 @@ echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
 ?>
 <?php
 include('conn.php');
-$query=mysqli_query($conn,"select count(cla_id) as total from `t_classe`");
+$query=mysqli_query($conn,"select count(mat_id) as total from `t_matiere`");
 $row=mysqli_fetch_array($query);
 ?>
 <?php echo $row['total'],"</div>"; 
