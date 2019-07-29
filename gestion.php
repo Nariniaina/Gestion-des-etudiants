@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Application</title>
 </head>
-<body>
+<body id="acc">
     <span>
         <ul style="background-color: MediumSeaGreen; list-style-type: none; overflow: hidden;">
             <li style="float: left; font-size: 17px"><a href='accueil.php'>←</a></li>

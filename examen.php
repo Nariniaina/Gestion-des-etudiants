@@ -30,9 +30,9 @@
         <p> <label style="color: black">DATE DE L'EXAMEN :</label>  
         <p><input type="date" name="date" required></p>
         <p><label style="color: black">NUMERO DE LA SALLE D'EXAMEN :</label>
-        <p><input type="text" name='numsalle'></p>
+        <p><input type="text" name='numsalle' required></p>
         <p><label style="color: black">NUMERO DE LA MATIERE :</label>
-        <p><input type="text" name='matiere'></p>
+        <p><input type="text" name='matiere' required></p>
         <p><input type="submit" value="CONFIRMER"></p>
     </form>
 </body>

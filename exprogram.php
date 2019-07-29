@@ -45,7 +45,7 @@
                         <td><?php echo ($cla['el_email']); ?></td>
                         <td><?php echo ($cla['el_option']); ?></td>
                         <td><?php echo ($cla['classe']); ?></td>
-                        <td><span><a href="testt.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
+                        <td><span><a href="traitement11.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
                     </tr>
             <?php } ?>
                 </table>
@@ -76,7 +76,7 @@
                         <td><?php echo ($cla['el_email']); ?></td>
                         <td><?php echo ($cla['el_option']); ?></td>
                         <td><?php echo ($cla['classe']); ?></td>
-                        <td><span><a href="testt.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
+                        <td><span><a href="traitement11.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
                     </tr>
             <?php } ?>
                 </table>
@@ -107,7 +107,7 @@
                         <td><?php echo ($cla['el_email']); ?></td>
                         <td><?php echo ($cla['el_option']); ?></td>
                         <td><?php echo ($cla['classe']); ?></td>
-                        <td><span><a href="testt.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
+                        <td><span><a href="traitement11.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
                     </tr>
             <?php } ?>
                 </table>
@@ -138,7 +138,7 @@
                         <td><?php echo ($cla['el_email']); ?></td>
                         <td><?php echo ($cla['el_option']); ?></td>
                         <td><?php echo ($cla['classe']); ?></td>
-                        <td><span><a href="testt.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
+                        <td><span><a href="traitement11.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
                     </tr>
             <?php } ?>
                 </table>
@@ -169,7 +169,7 @@
                         <td><?php echo ($cla['el_email']); ?></td>
                         <td><?php echo ($cla['el_option']); ?></td>
                         <td><?php echo ($cla['classe']); ?></td>
-                        <td><span><a href="testt.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
+                        <td><span><a href="traitement11.php?code=<?php echo ($cla['el_id']); ?>">Selectionner</a></span></td>
                     </tr>
             <?php } ?>
                 </table>
