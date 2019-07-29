@@ -60,6 +60,11 @@ while ($row = $requete1->fetch_assoc()) {
 
 <html>
  <body>
+    <form method="POST" action="chercheretudiant.php">
+        <div>
+            Mot clé :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="motcle"><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="chercher"></p>
+        </div>
+    </form>
     <table>
         <tr>
             <th>Numero</th>

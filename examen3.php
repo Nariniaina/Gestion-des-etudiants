@@ -26,7 +26,7 @@
     </span>
     <div>
         <h1><span>Programmer l'examen</span></h1>
-        <form method="post" action="traitement13.php">
+        <form method="post" action="traitement12.php">
         <p> <label style="color: black">DATE DE L'EXAMEN :</label>  
         <p><input type="date" name="date" required></p>
         <p><label style="color: black">NUMERO DE LA SALLE D'EXAMEN :</label>

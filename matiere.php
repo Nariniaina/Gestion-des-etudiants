@@ -47,7 +47,7 @@ include("auth.php");
 include('conn.php');
 $bdd = new PDO('mysql:host=localhost;dbname=gestioneleve', 'root', '');
 
-echo "<h1><div><span>Voici la liste de tous les classes :</span></h1>";
+echo "<h1><div><span>Voici la liste de tous les matières :</span></h1>";
 echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
 ?>
 <?php
