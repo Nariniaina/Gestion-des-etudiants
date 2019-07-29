@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost","root","","gestion_etudiant");
+$conn = mysqli_connect("localhost","root","","gestioneleve");
 
 // Check connection
 if (mysqli_connect_errno())

@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Document</title>
+    <title>Inscription</title>
 </head>
 <body>
 <ul>
@@ -23,6 +23,7 @@
 <form method="post" action="register.php">
 	<div>
 		<p><label>Username</label> : </p><p><input type="text" name="username" required></p>
+		<p> <label>Email</label> : </p><p><input type="email" name="email" required></p>
 		<p> <label>Password</label> : </p><p><input type="password" name="password" required></p>
 		<p> <label>Repeat password</label> : </p><p><input type="password" name="repeatpassword" required></p>
 		<p><input type="submit" value="S'incrire"></p>	
