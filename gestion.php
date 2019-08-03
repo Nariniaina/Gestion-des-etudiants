@@ -20,7 +20,6 @@
             <li style="float: left;"><a href='classelist.php'> ③ Classe</a></li>
             <li style="float: left;"><a href='matierelist.php'> ④ Matiere</a></li>
             <li style="float: left;"><a href='sallelist.php'> ⑤ Salle</a></li>
-            <li style="float: left;"><a href='tempslist.php'> ⑥ Emploie du temps</a></li>
             <li style="float: left;"><a href='examenlist.php'> ⑦ Examen</a></li>
         </ul>
     </span>
@@ -68,13 +67,6 @@
                 <span style="float: left">
                     <form method="post" action="salle.php">
                         <p><button class="button button4">Répartition des salles</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
-                    </form>
-                </span>    
-            </td>
-            <td>
-                <span style="float: left">
-                    <form method="post" action="gest_temps.php">
-                        <p><button class="button button4">Gestion de l'emploie du temps</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
                     </form>
                 </span>    
             </td>

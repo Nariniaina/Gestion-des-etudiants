@@ -13,31 +13,34 @@ echo "<h1><span>&nbsp&nbspVoici la liste de tous les élèves en RSI : </span></
 echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspNombre total :&nbsp"
 ?>
 <?php
-include('conn.php');
-$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_option = 'RSI'");
-$row=mysqli_fetch_array($query);
+    include('conn.php');
+    $query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_option = 'RSI'");
+    $row=mysqli_fetch_array($query);
 ?>
-<?php echo $row['total']; 
-?>
-<?php
-echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :&nbsp"
+<?php 
+    echo $row['total']; 
 ?>
 <?php
-include('conn.php');
-$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'H' && el_option = 'RSI'");
-$row=mysqli_fetch_array($query);
-?>
-<?php echo $row['total']; 
+    echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspHomme :&nbsp"
 ?>
 <?php
-echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :&nbsp"
+    include('conn.php');
+    $query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'H' && el_option = 'RSI'");
+    $row=mysqli_fetch_array($query);
+?>
+<?php 
+    echo $row['total']; 
 ?>
 <?php
-include('conn.php');
-$query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'F' && el_option = 'RSI'");
-$row=mysqli_fetch_array($query);
+    echo "<p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbspFemme :&nbsp"
 ?>
-<?php echo $row['total']; 
+<?php
+    include('conn.php');
+    $query=mysqli_query($conn,"select count(el_id) as total from `t_eleve` where el_sexe = 'F' && el_option = 'RSI'");
+    $row=mysqli_fetch_array($query);
+?>
+<?php 
+    echo $row['total']; 
 ?>
 <br></br>
 <?php

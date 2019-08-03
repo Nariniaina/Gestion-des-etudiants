@@ -17,7 +17,6 @@
             <li style="float: left;"><a href='classelist.php'> ③ Classe</a></li>
             <li style="float: left;"><a href='matierelist.php'> ④ Matiere</a></li>
             <li style="float: left;"><a href='sallelist.php'> ⑤ Salle</a></li>
-            <li style="float: left;"><a href='tempslist.php'> ⑥ Emploie du temps</a></li>
             <li style="float: left;"><a href='examenlist.php'> ⑦ Examen</a></li>
         </ul>
     </span>

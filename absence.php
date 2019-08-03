@@ -1,5 +1,13 @@
 <?php
     include("auth.php");
+    include('conn.php');
+    $req = "select * from t_eleve";
+    $rs = mysqli_query($conn,$req) or die(mysqli_error());
+    $option = NULL;
+    while($row = mysqli_fetch_assoc($rs))
+        {
+          $option .= '<option value = "'.$row['el_id'].'">'.$row['el_prenom'].'</option>';
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,15 +28,21 @@
             <li style="float: left;"><a href='classelist.php'> ③ Classe</a></li>
             <li style="float: left;"><a href='matierelist.php'> ④ Matiere</a></li>
             <li style="float: left;"><a href='sallelist.php'> ⑤ Salle</a></li>
-            <li style="float: left;"><a href='tempslist.php'> ⑥ Emploie du temps</a></li>
             <li style="float: left;"><a href='examenlist.php'> ⑦ Examen</a></li>
         </ul>
     </span>
     <div>
         <h1><span>Remplir les informations de l'absence</span></h1>
         <form method="post" action="traitement3.php">
-        <p><label style="color: black">NUMERO DE L'ELEVE :</label>  
-        <p><input type="text" name="numero" required></p>
+        <p><label style="color: black">PRENOM DE L'ELEVE :</label>  
+        <p>
+            <select name="numero"> 
+                <option value = "<?php while($row = mysqli_fetch_assoc($rs))
+            {
+              $option .= '<option value = "'.$row['el_id'].'">'.$row['el_prenom'].'</option>';
+            }  ?>"><?php echo $option; ?></option>
+            </select>
+        </p>
         <p> <label style="color: black">MOTIF DE L'ABSENCE :</label>  
         <p><input type="text" name="motif" required></p>
         <p><label style="color: black">DATE DE L'ABSENCE :</label>

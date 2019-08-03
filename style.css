@@ -81,6 +81,16 @@ input[type=password], select {
   box-sizing: border-box;
 }
 
+input[type=number], select {
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
 input[type=email], select {
   width: 40%;
   padding: 12px 20px;
@@ -132,6 +142,28 @@ input[type=submit]:hover {
   padding-left: 25px;
 }
 
+.buttons {
+  width: 100%;
+  background-color: #ff9800;
+  color: #ff9800;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 34px;
+  cursor: pointer;
+}
+
+.buttons1 {
+  width: 40%;
+  background-color: #ff9800;
+  color: #ff9800;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 34px;
+  cursor: pointer;
+}
+
 .button3 {
   background-color: white; 
   color: #f44336; 
@@ -154,19 +186,29 @@ input[type=submit]:hover {
   color: white;
 }
 
+.button5 {
+  background-color: rgb(0, 157, 112); 
+  color: white; 
+}
+
+.button5:hover {
+  background-color: rgb(0, 124, 58);
+  color: white;
+}
+
 .login {
   border: none;
   border-radius: 1.5rem;
-  background: rgb(255, 53, 71);
+  background: #f8f8f8;
   font-weight: 600;
-  color: #555;
+  color: #f8f8f8;
   margin-top: 20px;
   padding: 50px;
   float: right;
   border-top-left-radius: 40% 50%;
   border-bottom-left-radius: 5% 50%;
   padding-left :100px;
-  padding-right :80px; 
+  padding-right :80px;
 }
 
 div {
@@ -227,6 +269,5 @@ li a:hover:not(.active) {
 }
 
 #acc{
-  background-image: url('aiop.JPG');
-  background-repeat: no-repeat;
+  background-image: linear-gradient(to right, rgb(0, 103, 32) , rgb(78, 213, 76));
 }

@@ -1,5 +1,20 @@
 <?php
     include("auth.php");
+    include('conn.php');
+    $req = "select * from t_salle";
+    $rs = mysqli_query($conn,$req) or die(mysqli_error());
+    $option = NULL;
+    while($row = mysqli_fetch_assoc($rs))
+        {
+          $option .= '<option value = "'.$row['sa_id'].'">'.$row['sa_nom'].'</option>';
+        }
+    $req1 = "select * from t_matiere";
+    $rs1 = mysqli_query($conn,$req1) or die(mysqli_error());
+    $option1 = NULL;
+    while($row1 = mysqli_fetch_assoc($rs1))
+        {
+          $option1 .= '<option value = "'.$row1['mat_id'].'">'.$row1['mat_nom'].'</option>';
+        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +35,6 @@
             <li style="float: left;"><a href='classelist.php'> ③ Classe</a></li>
             <li style="float: left;"><a href='matierelist.php'> ④ Matiere</a></li>
             <li style="float: left;"><a href='sallelist.php'> ⑤ Salle</a></li>
-            <li style="float: left;"><a href='tempslist.php'> ⑥ Emploie du temps</a></li>
             <li style="float: left;"><a href='examenlist.php'> ⑦ Examen</a></li>
         </ul>
     </span>
@@ -29,10 +43,24 @@
         <form method="post" action="traitement5.php">
         <p> <label style="color: black">DATE DE L'EXAMEN :</label>  
         <p><input type="date" name="date" required></p>
-        <p><label style="color: black">NUMERO DE LA SALLE D'EXAMEN :</label>
-        <p><input type="text" name='numsalle' required></p>
-        <p><label style="color: black">NUMERO DE LA MATIERE :</label>
-        <p><input type="text" name='matiere' required></p>
+        <p><label style="color: black">NOM DE LA SALLE D'EXAMEN :</label>
+        <p>
+            <select name="numsalle"> 
+                <option value = "<?php while($row = mysqli_fetch_assoc($rs))
+            {
+              $option .= '<option value = "'.$row['sa_id'].'">'.$row['sa_nom'].'</option>';
+            }  ?>"><?php echo $option; ?></option>
+            </select>
+        </p>
+        <p><label style="color: black">NOM DE LA MATIERE :</label>
+        <p>
+            <select name="matiere"> 
+                <option value = "<?php while($row1 = mysqli_fetch_assoc($rs1))
+            {
+              $option1 .= '<option value = "'.$row1['mat_id'].'">'.$row1['mat_nom'].'</option>';
+            }  ?>"><?php echo $option1; ?></option>
+            </select>
+        </p>
         <p><input type="submit" value="CONFIRMER"></p>
     </form>
 </body>
