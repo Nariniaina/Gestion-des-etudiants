@@ -39,8 +39,8 @@
         ?>
     <?php 
         require_once("conn.php");
-        $req = "select ret.ret_id as id,ret.ret_date as date,ret_heure as heure ,el.el_nom as nom, el.el_prenom as prenom, cla.cla_nom as classe, ret.ret_motif as motif from t_classe cla right join (a_classe cl inner join (t_eleve el inner join t_retard ret on el.el_id = ret.el_id)on cl.el_id = el.el_id) on cla.cla_id = cl.cla_id;";
-        $resultat = mysqli_query($conn,$req) or die(mysql_error());
+        $req = "select ret.ret_id as id,ret.ret_date as date,ret.ret_heure as heure ,el.el_nom as nom, el.el_prenom as prenom, cla.cla_nom as classe, ret.ret_motif as motif from t_classe cla right join (a_classe cl inner join (t_eleve el inner join t_retard ret on el.el_id = ret.el_id)on cl.el_id = el.el_id) on cla.cla_id = cl.cla_id;";
+        $resultat = mysqli_query($conn,$req) or die(mysqli_error());
     ?>
     <div>
     <table>

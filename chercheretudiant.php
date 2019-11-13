@@ -65,7 +65,7 @@ while ($row = $requete1->fetch_assoc()) {
  <body>
     <form method="POST" action="chercheretudiant.php">
         <div>
-            Mot clé :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="motcle"><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="chercher"></p>
+            Mot clé :&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="motcle" placeholder="Prenom"><p>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<input type="submit" value="chercher"></p>
         </div>
     </form>
     <table>

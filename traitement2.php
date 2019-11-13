@@ -4,10 +4,9 @@
     $motif = htmlentities(trim($_POST['motif']));
     $trn_time = date("H:i:s");
     $trn_date = date("Y-m-d");
-    $connect = mysqli_connect('localhost','root','') or die ('error'); //connexion au serveur SQL
-    mysqli_select_db($connect,"gestioneleve");  //connexion à la base
+    include("conn.php");
     $req="INSERT INTO t_retard(el_id,ret_motif,ret_heure, ret_date) values ('$id','$motif','$trn_time', '$trn_date')";  //requete SQL insertion 
-    mysqli_query($connect,$req);
+    mysqli_query($conn,$req);
 ?>
 <?php 
 header('location:retard.php');?>

@@ -45,8 +45,6 @@
         </p>
         <p> <label style="color: black">MOTIF DU RETARD :</label>  
         <p><input type="text" name="motif" required></p>
-        <p><label style="color: black">HEURE DU RETARD :</label>
-        <p><input type="time" name='time'></p>
         <p><input type="submit" value="CONFIRMER"></p>
     </div>
 </body>

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include("auth.php");
     require_once("conn.php");
     $numero = $_POST['id'];
     $note = $_POST['note'];

@@ -1,5 +1,5 @@
 <?php
-    session_start();
+    include("auth.php");
     require_once("conn.php");
     $connect = mysqli_connect('localhost','root','') or die ('error'); //connexion au serveur SQL
     mysqli_select_db($connect,"gestioneleve");  //connexion à la base
