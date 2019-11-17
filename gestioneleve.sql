@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  lun. 28 oct. 2019 à 02:03
+-- Généré le :  Dim 17 nov. 2019 à 11:50
 -- Version du serveur :  5.7.24
 -- Version de PHP :  7.2.14
 
@@ -37,7 +37,7 @@ CREATE TABLE IF NOT EXISTS `a_classe` (
   PRIMARY KEY (`aclasse_id`),
   KEY `cla_id` (`cla_id`),
   KEY `el_id` (`el_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `a_classe`
@@ -46,7 +46,10 @@ CREATE TABLE IF NOT EXISTS `a_classe` (
 INSERT INTO `a_classe` (`aclasse_id`, `cla_id`, `el_id`, `aclasse_date`) VALUES
 (1, 3, 1, '2019-10-28'),
 (3, 2, 2, '2019-10-28'),
-(4, 6, 3, '2019-10-28');
+(4, 6, 3, '2019-10-28'),
+(5, 2, 4, '2019-11-17'),
+(6, 3, 5, '2019-11-17'),
+(7, 7, 6, '2019-11-17');
 
 -- --------------------------------------------------------
 
@@ -91,14 +94,15 @@ CREATE TABLE IF NOT EXISTS `t_absence` (
   `abs_date` date DEFAULT NULL,
   PRIMARY KEY (`abs_id`),
   KEY `el_id` (`el_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_absence`
 --
 
 INSERT INTO `t_absence` (`abs_id`, `abs_motif`, `el_id`, `abs_date`) VALUES
-(1, 'Malade', 1, '2019-10-28');
+(1, 'Malade', 1, '2019-10-28'),
+(2, 'Maux de ventre', 5, '2019-11-17');
 
 -- --------------------------------------------------------
 
@@ -145,7 +149,7 @@ CREATE TABLE IF NOT EXISTS `t_eleve` (
   `el_diplome` varchar(40) DEFAULT NULL,
   `el_option` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`el_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_eleve`
@@ -154,7 +158,10 @@ CREATE TABLE IF NOT EXISTS `t_eleve` (
 INSERT INTO `t_eleve` (`el_id`, `el_nom`, `el_prenom`, `el_ddn`, `el_sexe`, `el_inscription`, `el_email`, `el_diplome`, `el_option`) VALUES
 (1, 'RAMANANTSALAMA', 'Nariniaina', '1999-01-15', 'H', 2019, 'nariniaina.ramanantsalama@esti.mg', 'D', 'DEV'),
 (2, 'RAZAFITSARA', 'Sly', '1999-02-15', 'H', 2019, 'razafitsaraslykers@gmail.com', 'A2', 'RSI'),
-(3, 'RAFARAMALALA', 'Hanta', '1994-12-14', 'F', 2019, 'rafara@gmail.com', 'D', 'DEV');
+(3, 'RAFARAMALALA', 'Hanta', '1994-12-14', 'F', 2019, 'rafara@gmail.com', 'D', 'DEV'),
+(4, 'RAKOTOSON', 'Faly', '1998-03-14', 'H', 2019, 'faly.rakotoson@esti.mg', 'C', 'RSI'),
+(5, 'RAFALISON', 'Rija', '2000-11-09', 'H', 2019, 'rija.rafalison@esti.mg', 'D', 'DEV'),
+(6, 'RAKOFANDRAINY', 'Mamy', '1991-12-12', 'H', 2019, 'mamy.rakofandrainy@esti.mg', 'D', 'DEV');
 
 -- --------------------------------------------------------
 
@@ -192,14 +199,15 @@ CREATE TABLE IF NOT EXISTS `t_matiere` (
   `mat_nom` varchar(60) DEFAULT NULL,
   `mat_prof` varchar(60) DEFAULT NULL,
   PRIMARY KEY (`mat_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_matiere`
 --
 
 INSERT INTO `t_matiere` (`mat_id`, `mat_nom`, `mat_prof`) VALUES
-(1, 'INFO_140_Initiation a la programmation', 'Mr Nirina');
+(1, 'INFO_140_Initiation a la programmation', 'Mr Nirina'),
+(2, 'INFO_163_Reseaux concept et mise en oeuvre', 'Mr Hariniony');
 
 -- --------------------------------------------------------
 
@@ -216,7 +224,7 @@ CREATE TABLE IF NOT EXISTS `t_retard` (
   `ret_date` date DEFAULT NULL,
   PRIMARY KEY (`ret_id`),
   KEY `el_id` (`el_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_retard`
@@ -224,7 +232,8 @@ CREATE TABLE IF NOT EXISTS `t_retard` (
 
 INSERT INTO `t_retard` (`ret_id`, `el_id`, `ret_motif`, `ret_heure`, `ret_date`) VALUES
 (1, 1, 'Bus', '01:19:59', '2019-10-28'),
-(2, 1, 'Bus', '01:21:22', '2019-10-28');
+(2, 1, 'Bus', '01:21:22', '2019-10-28'),
+(3, 6, 'Bus', '11:33:47', '2019-11-17');
 
 -- --------------------------------------------------------
 
@@ -237,7 +246,7 @@ CREATE TABLE IF NOT EXISTS `t_salle` (
   `sa_id` int(11) NOT NULL AUTO_INCREMENT,
   `sa_nom` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`sa_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `t_salle`
@@ -247,7 +256,15 @@ INSERT INTO `t_salle` (`sa_id`, `sa_nom`) VALUES
 (1, 'S1'),
 (2, 'S2'),
 (3, 'S3'),
-(4, 'S4');
+(4, 'S4'),
+(5, 'S5'),
+(6, 'S6'),
+(7, 'S7'),
+(8, 'S8'),
+(9, 'S9'),
+(10, 'S10'),
+(11, 'Hall'),
+(12, 'Amphi');
 
 --
 -- Contraintes pour les tables déchargées

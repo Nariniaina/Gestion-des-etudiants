@@ -15,7 +15,7 @@
   <div>
     <div class="login">
       <form method="post" action="login.php">
-              <h4><label style="color: rgb(96, 101, 95); font-size: 40px;">&nbsp&nbsp&nbsp&nbspLogin</h4>  
+              <h4><label style="color: rgb(96, 101, 95); font-size: 40px;">Login</h4>  
               <p><input type="text" name="username" required style="
                         width: 100%;
                         padding: 12px 12px;

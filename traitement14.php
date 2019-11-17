@@ -1,5 +1,5 @@
 <?php
-    include("auth.php");
+    session_start();
     require_once("conn.php");
     $code = $_GET['code'];
 ?>

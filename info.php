@@ -15,8 +15,7 @@
     <div>
         <h1><span>Changer les informations d'un élève</span></h1>
         <form method="post" action="modifier.php">
-        <p><label style="color: black">SON NUMERO :</label>  
-        <p><input type="text" name="numero" value="<?php echo ($etudiant['el_id']); ?>" readonly></p>    
+        <p><input type="hidden" type="text" name="numero" value="<?php echo ($etudiant['el_id']); ?>" readonly></p>    
         <p><label style="color: black">NOM :</label>  
         <p><input type="text" name="nom" value="<?php echo ($etudiant['el_nom']); ?>"></p>
         <p> <label style="color: black">PRENOM :</label>  
@@ -61,9 +60,8 @@
     </div>
     </form> 
     <form method="post" action="delete.php">
-        <div>
-            <p><label>Son Numero</label> : 
-            <p><input type="text" name="numero2" value="<?php echo ($etudiant['el_id']); ?>" readonly></p>
+        <div> 
+            <p><input type="hidden" type="text" name="numero2" value="<?php echo ($etudiant['el_id']); ?>" readonly></p>
             <h1><span>Supprimer un élève : </span></h1>
             <p><input type="submit" value="Confirmer"></p>
         </div>
