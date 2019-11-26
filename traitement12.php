@@ -1,6 +1,5 @@
 <?php
     include("auth.php");
-    require_once("conn.php");
     include('conn.php');
     $query1=mysqli_query($conn,"select count(ex_id) as examen from temp_exam where el_id is not NULL;");
     $row=mysqli_fetch_array($query1);

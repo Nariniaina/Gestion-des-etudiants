@@ -7,6 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <script type="text/javascript" src="javascript.js"></script>
+    <script type="text/javascript" src="jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <title>Accueil</title>
 </head>
@@ -23,6 +25,7 @@
     <span style="float: right">
         <form method="post" action="logout.php">
             <p><button class="button button3">Se déconnecter</button>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</p>
+            <img src="" alt="" id="image">
         </form>
     </span>
     <div>

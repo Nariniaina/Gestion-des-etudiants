@@ -122,7 +122,6 @@
               <p><button class="buttons1 button5">Envoyer mes informations</button>
           </form>
     </div>
+</body>
 
-</body>
-</body>
 </html>
